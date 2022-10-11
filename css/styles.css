@@ -1,0 +1,65 @@
+.contenedor {
+    width: 500px;
+    height: 500px;
+    background: black;
+    margin: auto;
+    position: relative;
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid red;
+    background-image: url("https://www.xtrafondos.com/wallpapers/lineas-de-colores-3057.jpg");
+    background-size: cover;
+    /* background-repeat: no-repeat; */
+    /* background-size: 500px 500px; */
+}
+
+.contenedor::after {
+    right: 0;
+    bottom: 15%;
+    width: 0px;
+    height: 0px;
+}
+
+.contenedor::before {
+    left: 0;
+    top: 15%;
+    width: 0px;
+    /* height: 0px; */
+}
+
+.contenedor::after, .contenedor::before {
+    content: "";
+    position: absolute;
+}
+
+.content p{
+    transform: scale(1.5);
+    opacity: 0;
+    transition: .5s;
+    padding: 0 25px;
+    text-align: justify;
+}
+
+.contenedor:hover .content p{
+    transform: scale(1);
+    color: white;
+    opacity: 1;
+}
+
+.contenedor:hover:after {
+    width: 80%;
+    height: 5px;   
+    right: 10%;
+    transition: .7s ease;     
+    background-color: wheat;    
+}
+
+.contenedor:hover:before {
+    width: 80%;
+    transition: .7s;
+    height: 5px;   
+    left: 10%;
+    background-color: wheat;    
+}
